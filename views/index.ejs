@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collector's Cache</title>
+</head>
+<body>
+    <nav>
+        <h1>Collector's Cache</h1>
+    </nav>
+
+    <h2>Add an item</h2>
+    <form action="/addItem" method="post">
+        <!-- input container -->
+         <div>
+            <!-- title input container -->
+             <div>
+                <!-- text input label -->
+                 <label for="name">Item Name</label>
+                 <!-- text input for item -->
+                  <input 
+                  placeholder="Smiski"
+                  type="text"
+                  name="name"
+                  id="name"
+                  required>
+             </div>
+             <!-- image url container -->
+              <div>
+              <label for="imageUrl">Image URL</label>
+              <!-- text input for image url -->
+               <input 
+               type="url"
+               name="imageUrl"
+               id="imageUrl"
+               required>
+            </div>
+            <!-- owned input container
+             <div>
+                <label for="notes">Notes</label>
+                <input 
+                placeholder="bought 01/23"
+                type="text"
+                name="notes"
+                id="notes">
+             </div> -->
+         </div>
+         
+         <button type="submit">Log Item</button>
+    </form>
+
+    <section>
+        <h2>Items List</h2>
+        <ul>
+            <% for(const item of itemsInfo) { %>
+            <li>
+                <span>
+                    <%= item.name %> <img src="<%= item.image %>" alt="">
+                </span>
+                <button class="delete">Delete</button>
+            </li>
+            <% } %>
+        </ul>
+    </section>
+
+    <script src="/main.js"></script>
+</body>
+
+</html>
