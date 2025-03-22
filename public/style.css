@@ -1,0 +1,26 @@
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    list-style-type: none;
+}
+
+span,
+button {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.delete {
+    margin: 0 auto;
+    margin-top: 1.2rem;
+}
+
+img {
+    width: 12rem;
+}
+
+section h2 {
+    text-align: center;
+}
