@@ -2,7 +2,7 @@ body{
     background-color: rgba(166, 208, 140, 0.5);
 }
 
-h1{
+h1, span{
     color: rgb(30, 95, 37)
 }
 
