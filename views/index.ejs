@@ -56,9 +56,13 @@
         <ul>
             <% for(const item of itemsInfo) { %>
             <li>
-                <span class="name-header">
-                    <%= item.name %> <img src="<%= item.image %>" alt="">
-                </span>
+                <% if(item.owned === true){%>
+                    <span><%= item.name %> </span>
+                    <img class="owned" src="<%= item.image %>" alt="image icon">
+                <% } else { %>
+                    <span><%= item.name %> </span>
+                    <img class="notOwned" src="<%= item.image %>" alt="image icon">
+                <% } %>
                 <button class="delete">Delete</button>
             </li>
             <% } %>

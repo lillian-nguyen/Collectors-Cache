@@ -30,13 +30,22 @@ button {
 img {
     width: 12rem;
     padding-top: 1rem;
+    cursor: pointer;
 }
 
 section h2 {
     text-align: center;
 }
 
-.name-header{
+span{
     font-size: 1.5rem;
     letter-spacing: 0.1rem;
+}
+
+.owned{
+    opacity: 1
+}
+
+.notOwned{
+    opacity: 0.5
 }
