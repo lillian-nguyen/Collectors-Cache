@@ -1,6 +1,15 @@
+body{
+    background-color: rgba(166, 208, 140, 0.5);
+}
+
+h1{
+    color: rgb(30, 95, 37)
+}
+
 ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 4rem;
     list-style-type: none;
 }
@@ -15,12 +24,19 @@ button {
 .delete {
     margin: 0 auto;
     margin-top: 1.2rem;
+    cursor: pointer;
 }
 
 img {
     width: 12rem;
+    padding-top: 1rem;
 }
 
 section h2 {
     text-align: center;
+}
+
+.name-header{
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
 }

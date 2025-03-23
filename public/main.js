@@ -7,14 +7,13 @@ deleteButtons.forEach(button => {
 
 async function deleteItem(){
     try{
-        let itemName = this.parentNode.textContent;
-        // itemName = itemName.trim().split(' by ')[0];
-
+        let itemName = this.parentNode.childNodes[1].innerText;
+        console.log(itemName)
         const result = await fetch('/deleteItem', {
             method: 'delete',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                item: itemName
+                name: itemName
             })
         })
 
