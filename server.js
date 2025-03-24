@@ -72,6 +72,23 @@ app.delete('/deleteItem', async (req, res) => {
     } catch(err){
         console.error(`Failed to delete item: ${err}`)
     }
+});
+
+app.put('/markOwned', async (req, res) => {
+    try{
+        await itemStatus(req, res, true, items)
+    } catch(err){
+        console.error(`Failed to mark as owned: ${err}`)
+    }
+    
+})
+
+app.put('/markNotOwned', async (req, res) => {
+    try{
+        await itemStatus(req, res, false, items)
+    } catch(err){
+        console.error(`Failed to mark as not owned: ${err}`)
+    }
 })
 
 app.listen(process.env.PORT || PORT, () => console.log(`Server running on port ${PORT}!`));
@@ -87,6 +104,19 @@ async function main(){
         console.error(`Failed to start application: ${err}`);
     }
 }
+
+async function itemStatus(req, res, isOwned, items){
+    try{
+        const result = await items.updateOne({name: req.body.name}, {
+            $set: {
+                owned: isOwned
+            }
+        })
+        res.json(`Marked ${isOwned? 'Owned' : 'Not Owned'}`)
+    } catch(err){
+        console.error('Failed to update book')
+    }
+};
 
 //run app
 main()

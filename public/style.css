@@ -31,6 +31,7 @@ img {
     width: 12rem;
     padding-top: 1rem;
     cursor: pointer;
+    opacity: 0.5
 }
 
 section h2 {
@@ -44,8 +45,4 @@ span{
 
 .owned{
     opacity: 1
-}
-
-.notOwned{
-    opacity: 0.5
 }
